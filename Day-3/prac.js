@@ -11,7 +11,7 @@ if (age == 0) {
 }
 
 //switch
-var UserValue = "Wednesday";
+var UserValue = "January";
 switch (UserValue) {
   case "Sunday":
     console.log("User has choosen Sunday!");
@@ -34,6 +34,8 @@ switch (UserValue) {
   case "Saturday":
     console.log("The User has choosen Saturday!");
     break;
+    default :
+    console.log("Selected day is not available");
 }
 
 // Logical Operators
