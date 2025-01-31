@@ -153,34 +153,151 @@ const charCount = (str) => {
 // console.log(charCount(str));
 
 // third largest element
-let a = [20, 12, 1, 31, 41, 11, 44];
+// let a = [20, 12, 1, 31, 41, 11, 44];
 
-const thirdElement = (a) => {
-  let first = a[0];
-  let second = a[1];
-  let third = a[2];
+// const thirdElement = (a) => {
+//   let first = a[0];
+//   let second = a[1];
+//   let third = a[2];
 
-  if (third > first) {
-    [third, first] = [first, third];
-  }
-  if (third > second) {
-    [third, second] = [second, third];
-  }
-  if (second > first) {
-    [second, first] = [first, second];
-  }
+//   if (third > first) {
+//     [third, first] = [first, third];
+//   }
+//   if (third > second) {
+//     [third, second] = [second, third];
+//   }
+//   if (second > first) {
+//     [second, first] = [first, second];
+//   }
 
-  for (let i = 0; i < a.length; i++) {
-    if (a[i] > first) {
-      third = second;
-      second = first;
-      first = a[i];
-    } else if (a[i] > second) {
-      third = second;
-      second = a[i];
-    } else if (a[i] > third) {
-      third = a[i];
-    }
-  } return third
-};
-console.log(thirdElement(a));
+//   for (let i = 0; i < a.length; i++) {
+//     if (a[i] > first) {
+//       third = second;
+//       second = first;
+//       first = a[i];
+//     } else if (a[i] > second) {
+//       third = second;
+//       second = a[i];
+//     } else if (a[i] > third) {
+//       third = a[i];
+//     }
+//   }
+//   return third;
+// };
+// console.log(thirdElement(a));
+
+// /////tricky
+
+//1. var x = 10;
+
+// function inc(x) {
+//   x++;
+//   return x;
+// }
+
+// const res = inc(x);
+// console.log(x);
+
+//2. function closex(){
+//   let x = 0; // New `x` is created every time `example()` is called
+// x++
+//   console.log(x);
+// }
+// closex();>>1
+// closex();>>1
+
+// 3
+// function outer() {
+//       let count = 0
+//       return function inner() {
+//           count++;
+//           console.log(count);
+
+//       }
+//       inner();
+//       console.log(count);
+//   }
+
+//   const res = outer();
+
+//   res() >>1
+//   res() >>2
+
+// 4/ Promise.resolve(3)
+// //     .then((res) => {return res+2})
+// //     .catch()
+// //     .then(res => {
+// //         console.log(res)})
+// //     .then()
+// //     .then()
+// //     .catch()
+// //     .then((res) => { console.log(res) })  >>5
+
+//5 (function () {
+//       try {
+//           throw new Error();
+//       } catch (x) {
+//           var x = 1, y = 2;
+//           console.log(x);  //1
+//       }
+//       console.log(x);      //undefined
+//       console.log(y);     //2
+//   })();
+
+// 6
+// function outer(){
+//       var a = 2;
+//       function inner(){
+//           a++ //this is undefined due to hoisting
+//           console.log(a); //nan
+//           var a = 10;
+//       }
+//       inner()
+//   }
+//   outer()
+
+// Q7.function timeout(){
+// //     let a = 1
+// //    while(a<=10){
+// //     setTimeout(()=>{
+// //         console.log(a);
+// //     },a *1000)
+// //     a++
+// //    }
+// // }
+
+// // timeout()
+
+//  A7function timeout(){
+//       let a = 1
+//      while(a<=10){
+//       (function(a){setTimeout(()=>{
+//         console.log(a);
+//     }
+//       ,a *1000)
+//   })(a)
+//       a++
+//      }
+//   }
+
+//   timeout() //using iife the scope of each variable is created differently and 1,2,3,4 will be printed
+
+// 8
+// let a = "red"
+// let  b = "purple"
+
+// let temp = a 
+// a = b 
+// b = temp
+
+// console.log(a , b);
+
+console.log("start"); //1
+
+setTimeout(()=>{
+    console.log("time out");   //3
+},0);
+
+ Promise.resolve().then(() => console.log("res")) //4
+
+console.log("End"); //2
