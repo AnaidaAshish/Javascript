@@ -1,21 +1,21 @@
 //Objects - to store multiple data in key:value form
 // var myobj = {key : "value",key2 : "value2"}  syntax
 
-var animal = {type:"Dog",
-petName: "Simba",
-age: 6, //number
-breed:"German Shephard",//String
-sibling : ["Anaida","Rambo"], //Array
-fav :{food : "Chicken",toy:"Tennis Ball"}//object
-}
+// var animal = {type:"Dog",
+// petName: "Simba",
+// age: 6, //number
+// breed:"German Shephard",//String
+// sibling : ["Anaida","Rambo"], //Array
+// fav :{food : "Chicken",toy:"Tennis Ball"}//object
+// }
 
-console.log(animal["age"])//to access specific data
-console.log(animal.sibling)//to access specific data
-console.log(animal.sibling[animal.sibling.length-1])//last element
+// console.log(animal["age"])//to access specific data
+// console.log(animal.sibling)//to access specific data
+// console.log(animal.sibling[animal.sibling.length-1])//last element
 
-animal.gender = "Male" //Reassigning value
-animal["location"] = "Navi Mumbai"//Reassigning value
-console.log(animal)
+// animal.gender = "Male" //Reassigning value
+// animal["location"] = "Navi Mumbai"//Reassigning value
+// console.log(animal)
 
 //another syntax for object
 // variableType varName = new Object()
@@ -58,9 +58,10 @@ function letterCount(string) {
   
   letterCount(string);
 
+
   // Q Given an string find out numbers of repetation for single letter and return a letter which having most of reperation .
 
-  var string = "anaida"
+  var string = "malayalam"
 function letterCount(string) {
     var output = {};
     console.log(string, "string");

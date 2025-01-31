@@ -6,7 +6,7 @@ function isPalindrome(string) {
   }
   return "String is Palindrome";
 }
-console.log(isPalindrome("malayalam"));
+// console.log(isPalindrome("malayalam"));
 const output = isPalindrome("madam");
 console.log(output , "output");
 

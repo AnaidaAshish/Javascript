@@ -14,7 +14,7 @@ function fact(num) {
   }
   console.log("Factorial of the given no. is: ", factorial);
 }
-fact(10);
+// fact(10);
 
 //Q3. Find whether the string is palindrome or not
 function pal(value){
